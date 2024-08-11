@@ -30,7 +30,7 @@
     "lint": "eslint . --cache"
   },
   "peerDependencies": {
-    "cdx-component": ">=0.0.9"
+    "cdx-component": ">=0.0.10-temp.20240811"
   },
   "dependencies": {
     "@nuxt/kit": "^3.9.3",
