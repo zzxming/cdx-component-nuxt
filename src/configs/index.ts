@@ -4,6 +4,11 @@ import { getAllCdxComponents } from './defaults';
 export * from './defaults';
 export const defaults: Options = {
   components: getAllCdxComponents(),
+  subComponents: {
+    CdxCaptcha: ['CdxCaptchaSlider'],
+    CdxCollapse: ['CdxCollapseItem'],
+    CdxElementSelect: ['CdxElementSelectItem'],
+  },
   directives: {
     loading: ['CdxLoadingDirective', 'CdxLoading'],
     tooltip: ['CdxTooltipDirective', 'CdxTooltip'],
