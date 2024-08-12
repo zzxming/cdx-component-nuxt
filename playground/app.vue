@@ -1,10 +1,27 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-
 type Direction = 'top' | 'right' | 'bottom' | 'left';
 const directionMap: Direction[] = ['top', 'right', 'bottom', 'left'];
-const show = ref(false);
+const showDrawer = ref(false);
 const direction = ref<Direction>(directionMap[3]);
+
+const imgs = [
+  'https://img.btstu.cn/api/images/5e699637490a3.jpg',
+  'https://img.btstu.cn/api/images/5ccfc851275d7.jpg',
+  'https://img.btstu.cn/api/images/5e54ceb87fea1.png',
+];
+const index = ref(1);
+const img = computed(() => imgs[index.value]);
+const handleRefresh = () => {
+  index.value = (index.value + 1) % imgs.length;
+  console.log(index.value, img.value);
+};
+
+const showEllipsis = ref(false);
+const content = ref(
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non architecto nulla repellendus libero vero hic accusamus, suscipit itaque, dolorum placeat nostrum laboriosam vel sapiente impedit ipsa saepe voluptatem autem?',
+);
+const texts = ref('ABCD'.split(''));
+const showModel = ref(true);
 </script>
 
 <template>
@@ -23,7 +40,7 @@ const direction = ref<Direction>(directionMap[3]);
     </label>
   </div>
   <CdxDrawer
-    v-model="show"
+    v-model="showDrawer"
     :direction="direction"
   >
     <template #swipe>
@@ -34,9 +51,43 @@ const direction = ref<Direction>(directionMap[3]);
     <div>drawer content</div>
   </CdxDrawer>
 
+  <CdxCaptcha
+    type="slider"
+    :image="img"
+    :canvas-size="[500, 300]"
+    :on-refresh="handleRefresh"
+  />
+
+  <div style="position: relative; height: 200px">
+    <CdxLoading
+      :visible="true"
+      text="loading..."
+      background="rgba(0, 0, 0, 0.5)"
+    />
+  </div>
+
+  <CdxCaptcha
+    type="pointer"
+    :image="img"
+    :texts="texts"
+    :canvas-size="[500, 300]"
+    :on-refresh="handleRefresh"
+    :tip-duration="3000"
+  />
+
   <button v-tooltip:left="'tip text'">
     hover
   </button>
+  <div v-resize.right.bottom.top.left style="width: 100px; height: 100px; background-color: #333;" />
+
+  <CdxTextEllipsis
+    v-model="showEllipsis"
+    :content="content"
+    :lines="1"
+    ellipsis-text="..."
+    expand-text="展开"
+    collapse-text="收起"
+  />
 </template>
 
 <style scoped>
