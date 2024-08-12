@@ -11,5 +11,11 @@ export default factory({
         'prefer-regex-literals': 'off',
       },
     },
+    {
+      files: ['playground/**'],
+      rules: {
+        'unused-imports/no-unused-vars': 'off',
+      },
+    },
   ],
 });
