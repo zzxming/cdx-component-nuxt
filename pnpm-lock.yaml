@@ -9,8 +9,8 @@ dependencies:
     specifier: ^3.9.3
     version: 3.12.4(magicast@0.3.4)(rollup@3.29.4)
   cdx-component:
-    specifier: '>=0.0.10-temp.20240811'
-    version: 0.0.10-temp.20240811(vue@3.4.37)
+    specifier: '>=0.0.10'
+    version: 0.0.10(vue@3.4.37)
   magic-string:
     specifier: ^0.30.11
     version: 0.30.11
@@ -3066,8 +3066,8 @@ packages:
   /caniuse-lite@1.0.30001651:
     resolution: {integrity: sha512-9Cf+Xv1jJNe1xPZLGuUXLNkE1BoDkqRqYyFJ9TDYSqhduqA4hu4oR9HluGoWYQC/aj8WHjsGVV+bwkh0+tegRg==}
 
-  /cdx-component@0.0.10-temp.20240811(vue@3.4.37):
-    resolution: {integrity: sha512-v5X8KSF39fEBzZfKbhZgTIMpRztSaxSJjzBrI51h49GtilDTGq3ux9UA0LckQKdPqFak2kh0IqgJVFbTAqcLyA==}
+  /cdx-component@0.0.10(vue@3.4.37):
+    resolution: {integrity: sha512-6EgSD4DyjF84zRNN4Xc27nAxrQ7R008M313zvG5h+uXvdeS+znsLLj/VZhwxw5cKBKvpzzHjCsna7xZdJmB49g==}
     peerDependencies:
       vue: ^3.3.11
     dependencies:
