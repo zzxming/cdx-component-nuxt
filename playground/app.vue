@@ -22,9 +22,39 @@ const content = ref(
 );
 const texts = ref('ABCD'.split(''));
 const showModel = ref(true);
+const vertialData = ref(new Array(20).fill(0).map((_, i) => ({ value: i })));
+const addData = (val: typeof vertialData) => {
+  val.value.push(...(new Array(20).fill(0).map((_, i) => ({ value: i }))));
+};
+const load = () => {
+  addData(vertialData);
+};
+const infinityOption = computed(() => [load, { rootMargin: '0px 0px 100px 0px' }]);
+const clickHandler = (e: MouseEvent) => {
+  console.log('click', e);
+};
 </script>
 
 <template>
+  <div
+    v-same-click-target="clickHandler"
+    style="height: 200px; border: 1px solid; overflow: auto;"
+  >
+    <div style="width: 100px; height: 100px;  border: 1px solid;" />
+  </div>
+  <div
+    v-infinity-scroll="infinityOption"
+    style="height: 200px; border: 1px solid; overflow: auto;"
+  >
+    <p v-for="i in vertialData" :key="i.value">
+      {{ i.value }}
+    </p>
+  </div>
+  <div
+    v-ripple
+    style="height: 200px; border: 1px solid;"
+  />
+
   <div>
     <label
       v-for="d in directionMap"
