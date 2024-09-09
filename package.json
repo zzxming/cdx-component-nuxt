@@ -2,7 +2,7 @@
   "name": "cdx-component-nuxt",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@8.14.3",
+  "packageManager": "pnpm@9.9.0",
   "description": "cdx component for nuxt",
   "author": "zzxming",
   "license": "MIT",
@@ -42,7 +42,7 @@
     "@types/node": "^20.11.10",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
-    "@zzxming/eslint-config": "^0.0.12",
+    "@zzxming/eslint-config": "^0.0.14",
     "eslint-merge-processors": "^0.1.0",
     "eslint-plugin-jsonc": "^2.16.0",
     "eslint-plugin-markdown": "^5.1.0",
@@ -51,7 +51,7 @@
     "jsonc-eslint-parser": "^2.4.0",
     "nuxi": "^3.12.0",
     "nuxt": "^3.9.3",
-    "typescript": "5.2.2",
+    "typescript": "^5.5.4",
     "vue-eslint-parser": "^9.4.3",
     "yaml-eslint-parser": "^1.2.3"
   }
